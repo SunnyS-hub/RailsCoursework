@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   root 'welcome#home'
 
-  get 'welcome/contact', to: 'welcome#contact'
+  get 'contact', to: 'welcome#contact'
+
+  resources :books
 end

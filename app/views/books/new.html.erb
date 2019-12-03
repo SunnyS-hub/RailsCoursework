@@ -1,0 +1,24 @@
+<h1>Add new book to collection </h1>
+
+
+<%= form_for @book do |b| %>
+  <p>
+    <%= b.label :name%> </br>
+    <%= b.text_field :name %>
+  </p>
+
+  <p>
+    <%= b.label :author%> </br>
+    <%= b.text_field :author %>
+  </p>
+
+  <p>
+    <%= b.label :description%> </br>
+    <%= b.text_area :description %>
+  </p>
+
+  <p>
+    <%= b.submit%>
+  </p>
+
+<% end %>
