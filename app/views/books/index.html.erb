@@ -1,0 +1,22 @@
+<h1>Listing book</h1>
+
+<table>
+
+  <tr>
+    <th>Name of book</th>
+    <th>Author</th>
+    <th>Description</th>
+  </tr>
+
+  <% @allBooks.each do |book|%>
+    <tr>
+
+      <td><%= book.name %></td>
+        <td><%= book.author %></td>
+      <td><%= book.description %></td>
+
+    </tr>
+
+  <% end %>
+
+</table>
