@@ -1,32 +1,12 @@
-<h1>Edit book information</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit</title>
+  </head>
 
-<% if @book.errors.any? %>
- <ul>
-   <% @book.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+  <body>
+    <h1>Edit book information</h1>
 
-    <% end %>
-  </ul>
-<% end %>
-
-<%= form_for @book do |b| %>
-  <p>
-    <%= b.label :name%> </br>
-    <%= b.text_field :name %>
-  </p>
-
-  <p>
-    <%= b.label :author%> </br>
-    <%= b.text_field :author %>
-  </p>
-
-  <p>
-    <%= b.label :description%> </br>
-    <%= b.text_area :description %>
-  </p>
-
-  <p>
-    <%= b.submit%>
-  </p>
-
-<% end %>
+    <%=render 'inputForm'%>
+  </body>
+</html>

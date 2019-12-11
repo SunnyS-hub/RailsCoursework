@@ -1,32 +1,13 @@
-<h1>Add new book to collection </h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Book</title>
+  </head>
 
-<% if @book.errors.any? %>
- <ul>
-   <% @book.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+  <body>
 
-    <% end %>
-  </ul>
-<% end %>
+    <h1>Add new book to collection </h1>
+    <%= render 'inputForm'%>
 
-<%= form_for @book do |b| %>
-  <p>
-    <%= b.label :name%> </br>
-    <%= b.text_field :name %>
-  </p>
-
-  <p>
-    <%= b.label :author%> </br>
-    <%= b.text_field :author %>
-  </p>
-
-  <p>
-    <%= b.label :description%> </br>
-    <%= b.text_area :description %>
-  </p>
-
-  <p>
-    <%= b.submit%>
-  </p>
-
-<% end %>
+  </body>
+</html>
