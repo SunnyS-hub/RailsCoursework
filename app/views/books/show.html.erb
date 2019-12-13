@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Show</title>
+    <title>Show Book</title>
   </head>
 
   <body>
-    <h1>Showing book infomation</h1>
 
-    <p>Name of book: <%= @book.name %> </p>
+      <h2 class = "center"><b><%= @book.name %></b></h2>
+      </br>
+      <div class ="blacktext well col-xs-8 col-xs-offset-2 center">
+        <h4 class = "center"><strong>Author:</strong></h4>
+        <hr> <%= simple_format(@book.author) %>
+        <h4 class = "center"><strong>Description:</strong></h4>
+        <hr> <%= simple_format(@book.description) %>
+        <div class="article-actions">
+          <%= link_to "Edit Book", edit_book_path(@book), class: "btn btn-xs btn-primary" %>
 
-    <p>Author: <%= @book.author %> </p>
-
-    <p>Description: <%= @book.description %> </p>
-
-    <%= link_to "Back", books_path%>
+          <%= link_to "Back",  books_path ,class: "btn btn-xs btn-success" %>
+        </div>
+      </div>
   </body>
 </html>

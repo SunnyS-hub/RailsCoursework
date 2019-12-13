@@ -5,30 +5,46 @@
   </head>
 
   <body>
-    <h1>Listing book</h1>
+    <div class="col-lg-3 " >
 
-    <%= link_to "Add new book", new_book_path%>
-    <table>
+      <div class="input-group">
+        <input type="text" class="show-align form-control" placeholder="Search for...">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Go!</button>
+        </span>
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
 
-      <tr>
-        <th>Name of book</th>
-        <th>Author</th>
-        <th>Description</th>
-      </tr>
+<div class="blacktext panel panel-default">
+  <!-- Default panel contents -->
+    <div class="panel-heading"><span style="padding-left:137px;">Books Owned By Users
+          <span style="padding-left:170px;"><%= link_to "Add new book",
+          new_book_path, class: "btn btn-success" %>
+          <span style="padding-left:10px;"><%= link_to "View my books???", "#",
+          class: "btn btn-primary"%>
 
-      <% @allBooks.each do |book|%>
-        <tr>
+    </div>
+  <!-- Table -->
+  <table class="table">
 
-          <td><%= book.name %></td>
-          <td><%= book.author %></td>
-          <td><%= book.description %></td>
-          <td><%= link_to 'Edit', edit_book_path(book) %></td>
-          <td><%= link_to 'Show', book_path(book) %></td>
-          <td><%= link_to 'Delete', book_path(book), method: :delete, data: {Confirm: "Are you sure?"} %></td>
-        </tr>
+    <tr>
+      <th>Name</th>
+      <th>Author</th>
+      <th>Description</th>
+    </tr>
+    <% @allBooks.each do |data| %>
+    <tr class ="tableallignleft">
+      <td><%= data.name %>  </td>
+        <td><%= data.author %>  </td>
+      <td><%= data.description%>  </td>
+      <td><%= link_to "Edit Info", edit_book_path(data) %></td>
+      <td><%= link_to "Show Info", book_path(data) %></td>
+      <td><%= link_to "Remove from collection", book_path(data), method: :delete, data: {confirm: "Are you sure?"} %></td>
+    </tr>
+  <% end %>
 
-      <% end %>
 
-    </table>
+  </table>
+
   </body>
 </html>

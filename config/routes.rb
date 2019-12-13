@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   get 'contact', to: 'welcome#contact'
 
-  resources :books
+  resources :books 
 end

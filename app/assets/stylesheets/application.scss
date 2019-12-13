@@ -13,5 +13,60 @@
  *= require_tree .
  *= require_self
  */
+$navbar-default-bg: #241309;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#logo{
+  float:left;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: overline;
+  color: #fff;
+}
+
+#logo:hover {
+  color:Red;
+}
+
+.container{
+  margin-top: 20px;
+}
+
+.center{
+  text-align: center;
+}
+
+.footer-style{
+  margin-top: 30px;
+
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+.footer-style small{
+  float: left;
+  margin-top: 5px;
+}
+
+.footer-style ul{
+  float: right;
+  list-style: none;
+  margin-top: 5px;
+}
+
+.jumbotron{
+  margin-top: 50px;
+  height: 500px;
+}
+
+.btn-style{
+  font-size: 1.8em;
+  background-color: #241309;
+}
+
+.show-align{
+  margin-top: 10;
+}

@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
 
   before_action :findByID, only: [:show, :edit, :update, :delete]
-  
+
 private
   def params_hash
     params.require(:book).permit(:name, :author,:description)
@@ -22,7 +22,7 @@ public
   def create
     @book = Book.new(params_hash)
     if @book.save
-      flash[:notice] = "The book was successfully added to your collection"
+      flash[:success] = "The book was successfully added to your collection"
       redirect_to book_path(@book)
     else
       render 'new'
@@ -39,7 +39,7 @@ public
 
   def update
     if @book.update(params_hash)
-      flash[:notice] = "The book information was successfully updated"
+      flash[:success] = "The book information was successfully updated"
       redirect_to book_path(@book)
     else
       render 'edit'
@@ -47,8 +47,11 @@ public
   end
 
   def destroy
-    @book.destroy
-    flash[:alert] = "Book successfully removed from your collection"
+    @book= Book.find(params[:id])
+    if @book.present?
+        @book.destroy
+    end
+    flash[:danger] = "Book successfully removed from your collection"
     redirect_to books_path
   end
 
