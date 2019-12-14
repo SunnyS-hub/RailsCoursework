@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Authors</title>
+  </head>
+
+  <body>
+
+<div class="blacktext panel panel-default">
+  <!-- Default panel contents -->
+    <div class="panel-heading"><span style="padding-left:400px;">All Authors
+          <span style="padding-left:170px;"><%= link_to "Add new author",
+          authors_new_path, class: "btn btn-success" %>
+
+    </div>
+  <!-- Table -->
+  <table class="table">
+
+    <tr>
+      <th>Name</th>
+    </tr>
+    <% @allAuthors.each do |data| %>
+    <tr class ="tableallignleft">
+      <td><%= data.name %>  </td>
+
+      <td><%= link_to "Remove Author", authors_path(data), method: :delete, data: {confirm: "Are you sure?"} %></td>
+    </tr>
+  <% end %>
+
+
+  </table>
+
+  </body>
+</html>

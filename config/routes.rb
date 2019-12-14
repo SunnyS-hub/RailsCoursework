@@ -4,8 +4,14 @@ Rails.application.routes.draw do
 
 
   root 'welcome#home'
-
   get 'contact', to: 'welcome#contact'
 
-  resources :books 
+  resources :books
+
+  #appropriate resource paths for authors create_table
+
+  get 'authors/new', to: 'authors#new'
+  get 'authors', to: 'authors#index'
+  post 'authors', to: 'authors#create'
+  delete 'authors.:id', to: 'authors#destroy'
 end

@@ -35,7 +35,7 @@
     <% @allBooks.each do |data| %>
     <tr class ="tableallignleft">
       <td><%= data.name %>  </td>
-        <td><%= data.author %>  </td>
+        <td><%= @author.find(data.author_id).name %>  </td>
       <td><%= data.description%>  </td>
       <td><%= link_to "Edit Info", edit_book_path(data) %></td>
       <td><%= link_to "Show Info", book_path(data) %></td>

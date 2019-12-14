@@ -18,7 +18,7 @@
             <%= s.label :author %>
           </div>
           <div class="col-sm-6">
-            <%= s.text_field :author, class:"form-control", placeholder:"Enter name of the author", autofocus:true%>
+            <%= collection_select(:book, :author_id, Author.all,:id, :name, {}, {:multiple => false})%>
           </div>
         </div>
         <div class="form-group">
@@ -30,14 +30,14 @@
           </div>
         </div>
         <div class="form-group">
-          <div class="col-sm-1">
-            <%= s.submit class: "btn btn-primary btn-lg container" %>
+          <div class="col-sm-offset-2 col-sm-5">
+            <%= s.submit class: "btn btn-primary btn-lg " %>
           </div>
         </div>
         <p>
           <div class="form-group">
-            <div class="col-sm-1">
-              <%= link_to "Back", books_path, class: "btn btn-primary btn-lg container3"%>
+            <div class="col-sm-offset-2  col-sm-4">
+              <%= link_to "Back", books_path, class: "btn btn-primary btn-lg"%>
             </div>
           </div>
         </p>

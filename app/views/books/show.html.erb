@@ -10,7 +10,7 @@
       </br>
       <div class ="blacktext well col-xs-8 col-xs-offset-2 center">
         <h4 class = "center"><strong>Author:</strong></h4>
-        <hr> <%= simple_format(@book.author) %>
+        <hr> <%= @author.find(@book.author_id).name %>
         <h4 class = "center"><strong>Description:</strong></h4>
         <hr> <%= simple_format(@book.description) %>
         <div class="article-actions">

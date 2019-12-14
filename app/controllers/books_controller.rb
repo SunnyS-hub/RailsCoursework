@@ -1,10 +1,9 @@
 class BooksController < ApplicationController
-
+  before_action :authenticate_user!, except: [:index,:show]
   before_action :findByID, only: [:show, :edit, :update, :delete]
-
 private
   def params_hash
-    params.require(:book).permit(:name, :author,:description)
+    params.require(:book).permit(:name, :author_id,:description)
   end
 
   def findByID
@@ -16,6 +15,7 @@ public
   end
 
   def index
+    @author = Author.all
     @allBooks = Book.all
   end
 
@@ -30,7 +30,7 @@ public
   end
 
   def show
-
+    @author = Author.all
   end
 
   def edit
