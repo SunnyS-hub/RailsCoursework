@@ -35,6 +35,7 @@ $navbar-default-bg: #241309;
   margin-top: 20px;
   margin-right: 20px;
   margin-left: 20px;
+  width: auto;
 }
 
 .center{
@@ -71,4 +72,8 @@ $navbar-default-bg: #241309;
 
 .show-align{
   margin-top: 10;
+}
+
+.deviseFrm{
+  float:left;
 }

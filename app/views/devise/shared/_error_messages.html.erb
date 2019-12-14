@@ -1,3 +1,30 @@
+
+
+<% if @user.errors.any? %>
+<div class ="row">
+  <div class="col-xs-6 col-xs-offset-2">
+    <div class="panel panel-danger">
+      <div class="panel-heading">
+        <h2 class="panel-title">
+          <%= pluralize(@user.errors.count, "error")%>
+          occured:
+        </h2>
+        <div class="panel-body">
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+            <li><%=msg%>
+            <% end %>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+
+<!--
 <% if resource.errors.any? %>
   <div id="error_explanation">
     <h2>
@@ -13,3 +40,5 @@
     </ul>
   </div>
 <% end %>
+
+-->
