@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 
   resources :books
 
+  #route for searching a book using search bar
+  get 'search', to: 'books#search'
+
   #appropriate resource paths for authors create_table
 
   get 'authors/new', to: 'authors#new'

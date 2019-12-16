@@ -18,6 +18,7 @@
             <%= s.label :author %>
           </div>
           <div class="col-sm-6">
+            <!-- select all authors from the db and let user choose them from a dropdown-->
             <%= collection_select(:book, :author_id, Author.all,:id, :name, {}, {:multiple => false})%>
           </div>
         </div>

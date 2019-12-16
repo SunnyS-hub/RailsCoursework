@@ -5,23 +5,19 @@
   </head>
 
   <body>
-    <div class="col-lg-3 " >
-
-      <div class="input-group">
-        <input type="text" class="show-align form-control" placeholder="Search for...">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button">Go!</button>
-        </span>
-      </div><!-- /input-group -->
-    </div><!-- /.col-lg-6 -->
+    <form class="navbar-form navbar-left" action="/search">
+      <div class="form-group">
+        <input type="text" class="form-control" name="wchBook" placeholder="Search Article" >
+      </div>
+      <button type="submit" class="btn btn-default">Search</button>
+    </form>
 
 <div class="blacktext panel panel-default">
   <!-- Default panel contents -->
-    <div class="panel-heading"><span style="padding-left:137px;">Books Owned By Users
-          <span style="padding-left:170px;"><%= link_to "Add new book",
+    <div class="panel-heading"><span style="padding-left:200px;">Books Owned By Users
+          <span style="padding-left:100px;"><%= link_to "Add new book",
           new_book_path, class: "btn btn-success" %>
-          <span style="padding-left:10px;"><%= link_to "View my books???", "#",
-          class: "btn btn-primary"%>
+
 
     </div>
   <!-- Table -->

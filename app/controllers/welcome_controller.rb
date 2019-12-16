@@ -9,7 +9,7 @@ class WelcomeController < ApplicationController
 
   end
 
-
+  #contact mailer action
   def request_contact
   #  params.require(contact_path).permit!
   #  allParams = params[:name]
@@ -19,6 +19,7 @@ class WelcomeController < ApplicationController
     telephone = params[:telephone]
     message = params[:message]
 
+    #check if email/message field is blank 
     if (email.blank?)
       flash[:danger] = "Please enter email"
       render 'contact'

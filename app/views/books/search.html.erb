@@ -1,0 +1,35 @@
+
+<form class="navbar-form navbar-left" action="/search">
+  <div class="form-group">
+    <input type="text" class="form-control" name="wchBook" placeholder="Search Article" >
+  </div>
+  <button type="submit" class="btn btn-default">Search</button>
+</form>
+
+<div class="blacktext panel panel-default">
+  <!-- Default panel contents -->
+    <div class="panel-heading"><span style="padding-left:200px;">Search result
+          <span style="padding-left:100px;"><%= link_to "Create new book",
+          new_book_path, class: "btn btn-success" %>
+
+    </div>
+  <!-- Table -->
+  <table class="table">
+
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+    </tr>
+    <%@book = Book.all%>
+    <% @search.each do |data| %>
+    <tr class ="tableallignleft">
+      <td><%= data.name %>  </td>
+      <td><%= data.description%>  </td>
+      <td><%= link_to "Edit", edit_book_path(data) %></td>
+      <td><%= link_to "Show", book_path(data) %></td>
+      <td><%= link_to "Destroy", book_path(data), method: :delete, data: {confirm: "Are you sure?"} %></td>
+    </tr>
+  <% end %>
+
+
+  </table>
