@@ -20,7 +20,7 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li><%=link_to "Contact Us", contact_path %></li>
         <li class="dropdown">
           <% if user_signed_in? %>
             <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-default ", type: "button"%>

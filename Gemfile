@@ -17,6 +17,8 @@ gem 'bootstrap-sass', '~>3.3.6'
 gem 'modernizr-rails'
 # Devise gem for authentication
 gem 'devise'
+# gem fot controller testing
+gem 'rails-controller-testing'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes

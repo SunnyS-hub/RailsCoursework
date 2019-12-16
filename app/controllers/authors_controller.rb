@@ -1,8 +1,16 @@
 class AuthorsController < ApplicationController
-#before_action :authenticate_user!
+before_action :require_admin
 private
     def params_hash
       params.require(:author).permit(:name)
+    end
+
+    
+    def require_admin
+      if !current_user || !current_user.admin?
+        flash[:danger] = "Not permitted"
+        redirect_to root_path
+      end
     end
 
 public

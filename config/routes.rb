@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   get 'authors', to: 'authors#index'
   post 'authors', to: 'authors#create'
   delete 'authors.:id', to: 'authors#destroy'
+
+  #mailer
+  post 'contact', to: 'welcome#request_contact'
 end
