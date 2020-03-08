@@ -12,7 +12,7 @@ gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # bootstrap for styling
-gem 'bootstrap-sass', '~>3.3.6'
+gem 'bootstrap-sass', '~>3.4.1'
 # Modernizer for checking browser compatibility
 gem 'modernizr-rails'
 # Devise gem for authentication
